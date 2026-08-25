@@ -47,6 +47,21 @@ export function WorkoutScreen({ onFinish }) {
       <div className="title-lg">{day.name.toUpperCase()}</div>
       <p className={styles.blurb}>{day.blurb}</p>
 
+      {!isMove && (
+        <div className={styles.bracingCard}>
+          <div className={styles.bracingTitle}>Bracing — you already know this</div>
+          <p className={styles.bracingBody}>
+            It's your breathwork, pointed at the spine. Inhale 360° into the
+            lower ribs and belt line (pranayama), lightly firm the belly all
+            the way around — a gentle uddiyana bandha at maybe 20%, not a
+            crunch — and exhale slowly through the hard part of each rep, the
+            way you move with breath in a flow. That soft cylinder is what
+            keeps the lower back happy under load. And the attention you'd
+            put on the breath on the cushion? Put it on the working muscle.
+          </p>
+        </div>
+      )}
+
       {isMove && <MoveCard cardio={day.cardio} />}
 
       <div className={wstyles.card}>

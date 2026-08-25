@@ -33,6 +33,7 @@ export const EQUIPMENT = [
 // rotation and scapular work instead of big arm swings, and every back-adjacent
 // item cued to pain-free range.
 export const WARMUP = [
+  'Diaphragm breaths — 5 slow, lying or standing: inhale 360° into the lower ribs and belt line (this is your pranayama, aimed at the spine — it becomes the brace)',
   'March in place — 60 sec, arms swinging easy',
   'Cat-cow — 8 slow rounds, moving with the breath',
   'Open-book rotations — 5 each side, lying on your side (frees the mid-back so the low back and shoulders don’t have to)',
@@ -84,7 +85,7 @@ export const DAYS = {
     cardio: {
       key: 'zone2_walk',
       name: 'Easy walk / ride / anything',
-      cue: 'Comfortable pace — you should be able to talk in full sentences the whole time. Outside beats treadmill for the soul, but both count. Log the minutes.',
+      cue: 'Comfortable pace — you should be able to talk in full sentences the whole time. Calm nasal breathing (ujjayi-easy, no strain) is a perfect pace-keeper. Outside beats treadmill for the soul, but both count. Log the minutes.',
       targetMin: '30–45 min',
     },
     // Gentle by design, with Ankit's shoulders and lower back leading the

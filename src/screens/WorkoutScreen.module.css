@@ -5,6 +5,28 @@
   margin: 8px 0 18px;
 }
 
+/* ── Bracing primer (strength days) ── */
+.bracingCard {
+  background: var(--bg-card);
+  border: 1px solid var(--green-line);
+  border-left: 4px solid var(--green);
+  border-radius: var(--r2);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+.bracingTitle {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--green);
+  margin-bottom: 6px;
+}
+.bracingBody {
+  font-size: 15px;
+  color: var(--t2);
+  line-height: 1.55;
+}
+
 .empty {
   font-size: 17px;
   color: var(--t2);
