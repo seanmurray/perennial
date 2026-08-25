@@ -14,23 +14,31 @@
 
 import { EX } from './exercises';
 
-// Onboarding / Settings equipment catalog.
+// Onboarding / Settings equipment catalog. Includes the usual home-gym
+// candidates so the plan grows as the gym does — tick a new box in Settings
+// the day something arrives and the slots upgrade themselves.
 export const EQUIPMENT = [
   { id: 'dumbbells',  label: 'Dumbbells',            hint: 'Any pair, adjustable or fixed' },
   { id: 'kettlebell', label: 'Kettlebell',           hint: 'One is plenty' },
   { id: 'bands',      label: 'Resistance bands',     hint: 'Loop or handle style' },
   { id: 'pullup_bar', label: 'Pull-up bar',          hint: 'Doorway bar counts' },
   { id: 'bench',      label: 'Bench / sturdy step',  hint: 'A solid bottom stair works' },
+  { id: 'barbell',    label: 'Barbell + plates',     hint: 'Even a light technique bar' },
+  { id: 'suspension', label: 'Suspension trainer',   hint: 'TRX, rings, or similar straps' },
+  { id: 'medball',    label: 'Medicine ball',        hint: 'A light one, 4–8 lbs' },
 ];
 
 // Warm-up — same short list both strength days. ~4 minutes, no equipment.
+// Written around Ankit's shoulder-rotation and lower-back history: thoracic
+// rotation and scapular work instead of big arm swings, and every back-adjacent
+// item cued to pain-free range.
 export const WARMUP = [
-  'March in place — 60 sec, arms swinging',
-  'Arm circles — 10 forward, 10 back',
-  'Cat-cow — 8 slow rounds',
-  'Standing hip circles — 5 each way',
-  'Bodyweight good morning — 10, hands on hips',
-  'Half-kneeling hip flexor stretch — 30 sec each side',
+  'March in place — 60 sec, arms swinging easy',
+  'Cat-cow — 8 slow rounds, moving with the breath',
+  'Open-book rotations — 5 each side, lying on your side (frees the mid-back so the low back and shoulders don’t have to)',
+  'Wall slides — 8 slow, forearms on the wall, only through the arc that feels smooth',
+  'Bodyweight good morning — 10, hands on hips, pain-free range only',
+  'Half-kneeling hip flexor stretch — 30 sec each side (tight hip flexors nag the low back)',
 ];
 
 // ── Strength day slots ──────────────────────────────────────────────────────
@@ -46,7 +54,9 @@ export const DAYS = {
     slots: [
       { role: 'squat',   label: 'Squat',          variants: ['goblet_squat_db', 'goblet_squat_kb', 'chair_squat'] },
       { role: 'push',    label: 'Push',           variants: ['db_floor_press', 'band_chest_press', 'incline_pushup'] },
-      { role: 'pull',    label: 'Pull',           variants: ['db_row', 'band_row', 'backpack_row'] },
+      // TRX row leads when owned — the most lumbar-friendly row there is
+      // (body supported, no hinge to hold).
+      { role: 'pull',    label: 'Pull',           variants: ['trx_row', 'db_row', 'band_row', 'backpack_row'] },
       { role: 'carry',   label: 'Carry',          variants: ['suitcase_carry_db', 'suitcase_carry_kb', 'backpack_carry'] },
       { role: 'balance', label: 'Balance & core', variants: ['sl_balance_reach'] },
     ],
@@ -57,11 +67,13 @@ export const DAYS = {
     blurb: 'Hinge, single leg, press, rotation. About 30 minutes.',
     kind: 'strength',
     slots: [
-      { role: 'hinge',      label: 'Hinge',        variants: ['kb_deadlift', 'db_rdl', 'glute_bridge'] },
+      // KB/DB stay ahead of the barbell on purpose: with a low-back history,
+      // earn the hinge light before loading it long.
+      { role: 'hinge',      label: 'Hinge',        variants: ['kb_deadlift', 'db_rdl', 'barbell_rdl', 'glute_bridge'] },
       { role: 'single_leg', label: 'Single leg',   variants: ['split_squat_db', 'step_up', 'split_squat_bw'] },
       { role: 'press',      label: 'Press',        variants: ['db_press', 'band_press', 'wall_pushup_plus'] },
       { role: 'upper_back', label: 'Upper back',   variants: ['dead_hang', 'band_pulldown', 'prone_swimmers'] },
-      { role: 'rotation',   label: 'Rotation',     variants: ['kb_coil_walk', 'band_rotation', 'hip_coil_walk'] },
+      { role: 'rotation',   label: 'Rotation',     variants: ['kb_coil_walk', 'medball_rotation', 'band_rotation', 'hip_coil_walk'] },
     ],
   },
   move: {
@@ -75,11 +87,15 @@ export const DAYS = {
       cue: 'Comfortable pace — you should be able to talk in full sentences the whole time. Outside beats treadmill for the soul, but both count. Log the minutes.',
       targetMin: '30–45 min',
     },
+    // Gentle by design, with Ankit's shoulders and lower back leading the
+    // choices: mid-back rotation and hip work do the mobilizing so the
+    // touchy areas get relief without being cranked on. Nothing here should
+    // ever be pushed into a pinch.
     mobility: [
-      'Deep bodyweight squat hold, hands on a support — 3×20 sec',
-      'Standing calf + wall lean stretch — 30 sec each side',
-      'Doorway chest stretch — 30 sec each side',
-      'Slow neck half-circles — 5 each way',
+      'Cat-cow — 8 slow rounds, let the spine wave through',
+      'Open-book rotations — 6 each side, top knee heavy on the floor',
+      'Child’s pose, walking the hands to each side — 30 sec per side (low-back decompression)',
+      'Doorway chest stretch — 30 sec each side, arm low, staying WELL below any shoulder pinch',
       'One-minute single-leg balance — eyes forward, switch halfway',
     ],
   },

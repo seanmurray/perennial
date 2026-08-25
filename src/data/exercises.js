@@ -45,6 +45,11 @@ export const EX = {
     url: YT('dumbbell romanian deadlift'),
     cue: 'Soft knees, slide the dumbbells down your thighs as your hips travel back. Stop when the hamstrings say hello. Stand by driving the hips through.',
   },
+  barbell_rdl: {
+    name: 'Barbell RDL', target: '2×8', type: 'strength', needs: ['barbell'],
+    url: YT('barbell romanian deadlift light'),
+    cue: 'Soft knees, bar slides down the thighs as the hips travel back — flat back the whole way, stop well before it wants to round. Start embarrassingly light; with a low-back history, the empty bar for a few weeks IS the program.',
+  },
   glute_bridge: {
     name: 'Glute bridge', target: '2×12', type: 'strength', needs: [], bodyweight: true,
     url: YT('glute bridge form'),
@@ -68,14 +73,14 @@ export const EX = {
     cue: 'Hands on a counter or sturdy table, body one straight line. Chest to the edge, press away. Lower the surface as it gets easy — that IS the progress.',
   },
   db_press: {
-    name: 'Dumbbell shoulder press', target: '2×8', type: 'strength', needs: ['dumbbells'],
-    url: YT('seated dumbbell shoulder press'),
-    cue: 'Press the dumbbells overhead without shrugging into your ears. Ribs down, no leaning back. Standing or seated both fine.',
+    name: 'Dumbbell shoulder press (neutral grip)', target: '2×8', type: 'strength', needs: ['dumbbells'],
+    url: YT('neutral grip dumbbell shoulder press'),
+    cue: 'Palms facing each other — the shoulder-friendliest pressing angle. Press up and very slightly forward; full overhead lockout is optional. Stop below any pinch, always. Ribs down, no leaning back.',
   },
   band_press: {
     name: 'Band overhead press', target: '2×10', type: 'strength', needs: ['bands'],
     url: YT('resistance band overhead press'),
-    cue: 'Stand on the band, press to full lockout overhead. Squeeze your belly so the ribs stay down.',
+    cue: 'Stand on the band, press up — full lockout only if the shoulder is happy there; stopping short is fine. Squeeze your belly so the ribs stay down.',
   },
   wall_pushup_plus: {
     name: 'Push-up plus (incline)', target: '2×10', type: 'strength', needs: [], bodyweight: true,
@@ -84,10 +89,15 @@ export const EX = {
   },
 
   // ─── PULL family ───────────────────────────────────────────
+  trx_row: {
+    name: 'Suspension row (TRX/rings)', target: '2×10', type: 'strength', needs: ['suspension'], bodyweight: true,
+    url: YT('trx row form beginner'),
+    cue: 'Lean back holding the straps, body one straight line, pull your chest to your hands and squeeze the shoulder blades. Walk your feet to make it easier or harder. The most back-friendly row there is — no bent-over position to hold.',
+  },
   db_row: {
     name: 'One-arm dumbbell row', target: '2×10', type: 'strength', needs: ['dumbbells'],
     url: YT('one arm dumbbell row chair support'),
-    cue: 'One hand braced on a chair, flat back. Pull the dumbbell to your hip — elbow, not hand, leads. Lower with control.',
+    cue: 'One hand braced on a chair so your back never works unsupported, flat back. Pull the dumbbell to your hip — elbow, not hand, leads. Lower with control.',
   },
   band_row: {
     name: 'Band row', target: '2×12', type: 'strength', needs: ['bands'],
@@ -102,7 +112,7 @@ export const EX = {
   dead_hang: {
     name: 'Dead hang', target: '3×20 sec', type: 'strength', needs: ['pullup_bar'], bodyweight: true,
     url: YT('dead hang benefits form'),
-    cue: 'Hang from the bar, shoulders relaxed but not slack, breathe. Grip strength is one of the best-studied longevity markers — this is the simplest way to train it.',
+    cue: 'Hang from the bar, shoulders relaxed but not slack, breathe. Keep your toes on the floor or a step and take some weight through them if the shoulder complains — a partial hang still counts. Grip strength is one of the best-studied longevity markers.',
   },
   band_pulldown: {
     name: 'Band pulldown', target: '2×12', type: 'strength', needs: ['bands'],
@@ -159,6 +169,11 @@ export const EX = {
     name: 'Walking coil with kettlebell', target: '2×6 each', type: 'strength', needs: ['kettlebell'],
     url: 'https://www.youtube.com/results?search_query=Judd+Lienhard+walking+KB+high+pull+coil',
     cue: 'Walk forward; each step, draw the bell up your side as the same-side hip coils under you. Light bell, smooth rhythm. Stop the set the moment it stops feeling springy.',
+  },
+  medball_rotation: {
+    name: 'Med-ball rotation toss', target: '2×8 each', type: 'strength', needs: ['medball'],
+    url: YT('medicine ball rotational toss light wall'),
+    cue: 'Side-on to a wall with a LIGHT ball. Turn the hips away, then unwind and toss it gently into the wall — the hips do the throwing, the shoulders just come along. Smooth and playful, never max effort.',
   },
   band_rotation: {
     name: 'Band rotation', target: '2×10 each', type: 'strength', needs: ['bands'],
