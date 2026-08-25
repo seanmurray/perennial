@@ -1,0 +1,75 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100svh;
+  padding-bottom: 40px !important; /* no bottom nav on this screen */
+}
+
+.leaf { font-size: 44px; margin-bottom: 6px; }
+
+.tagline {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--t2);
+  margin: 12px 0 28px;
+}
+
+.question {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--t1);
+}
+
+.hint {
+  font-size: 15px;
+  color: var(--t3);
+  line-height: 1.5;
+  margin: 6px 0 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.card {
+  position: relative;
+  text-align: left;
+  background: var(--bg-card);
+  border: 2px solid var(--bg-raised);
+  border-radius: var(--r2);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.card.on {
+  border-color: var(--green);
+  background: var(--green-bg);
+}
+
+.check {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  color: var(--green);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.label { font-size: 17px; font-weight: 700; color: var(--t1); }
+.eqHint { font-size: 13px; color: var(--t3); }
+
+.cta {
+  width: 100%;
+  padding: 17px;
+  border-radius: var(--r2);
+  background: var(--green);
+  color: #06210f;
+  font-size: 18px;
+  font-weight: 800;
+}

@@ -1,0 +1,130 @@
+import { useState } from 'react';
+import styles from './WorkoutScreen.module.css';
+import common from '../components/Common.module.css';
+import wstyles from '../components/Warmup.module.css';
+import { useShallow } from 'zustand/react/shallow';
+import { DAYS, WARMUP } from '../data/program';
+import { SlotCard } from '../components/SlotCard';
+import { NumField } from '../components/NumField';
+import { ExerciseHistoryInline } from '../components/ExerciseHistoryInline';
+import { useSessionStore } from '../stores/sessionStore';
+
+export function WorkoutScreen({ onFinish }) {
+  const { dayId, warmupChecked, setWarmupChecked } = useSessionStore(
+    useShallow((s) => ({
+      dayId: s.dayId,
+      warmupChecked: s.warmupChecked,
+      setWarmupChecked: s.setWarmupChecked,
+    }))
+  );
+
+  const day = dayId ? DAYS[dayId] : null;
+
+  if (!day) {
+    return (
+      <main className="screen">
+        <div className="title-lg">WORKOUT</div>
+        <p className={styles.empty}>
+          No session running — head to Today and pick one. Your work saves as
+          you go, so there's no wrong way to do this.
+        </p>
+      </main>
+    );
+  }
+
+  const isMove = day.kind === 'move';
+  const checklist = isMove ? day.mobility : WARMUP;
+  const checklistTitle = isMove ? 'Five-minute mobility' : 'Warm-up — ~4 min';
+  const allDone = warmupChecked.length === checklist.length;
+
+  const toggleAll = () => {
+    checklist.forEach((_, i) => setWarmupChecked(i, !allDone));
+  };
+
+  return (
+    <main className="screen">
+      <div className="overline">{isMove ? 'Easy day' : 'Strength day'}</div>
+      <div className="title-lg">{day.name.toUpperCase()}</div>
+      <p className={styles.blurb}>{day.blurb}</p>
+
+      {isMove && <MoveCard cardio={day.cardio} />}
+
+      <div className={wstyles.card}>
+        <div className={wstyles.head}>
+          <div className={wstyles.title}>{checklistTitle}</div>
+          <button
+            type="button"
+            className={`${wstyles.checkAll} ${allDone ? wstyles.allDone : ''}`}
+            onClick={toggleAll}
+          >
+            {allDone ? 'All Done ✓' : 'Check All'}
+          </button>
+        </div>
+        {checklist.map((text, i) => (
+          <label key={i} className={wstyles.item}>
+            <input
+              type="checkbox"
+              className={wstyles.cb}
+              checked={warmupChecked.includes(i)}
+              onChange={(e) => setWarmupChecked(i, e.target.checked)}
+            />
+            <span className={wstyles.text}>{text}</span>
+          </label>
+        ))}
+      </div>
+
+      {!isMove &&
+        day.slots.map((slot) => <SlotCard key={slot.role} slot={slot} dayId={day.id} />)}
+
+      <button type="button" className={common.cta} onClick={onFinish}>
+        Finish Session →
+      </button>
+    </main>
+  );
+}
+
+// Move-day cardio: log the minutes, that's the whole ask.
+function MoveCard({ cardio }) {
+  const pushPerf = useSessionStore((s) => s.pushPerf);
+  const [minutes, setMinutes] = useState(null);
+  const [saved, setSaved] = useState(false);
+
+  const log = () => {
+    if (!minutes || minutes <= 0) return;
+    pushPerf({
+      exercise_key: cardio.key,
+      exercise_name: cardio.name,
+      notes: `${Math.round(minutes)} min`,
+      effort_rpe: null,
+      performed_at: new Date().toISOString(),
+    });
+    setSaved(true);
+  };
+
+  return (
+    <div className={styles.moveCard}>
+      <div className={styles.moveName}>{cardio.name}</div>
+      <div className={styles.moveTarget}>{cardio.targetMin} · conversational pace</div>
+      <div className={styles.moveCue}>{cardio.cue}</div>
+      <div className={styles.moveRow}>
+        <NumField
+          decimal={false}
+          className={styles.moveInput}
+          value={minutes}
+          onChange={(v) => { setMinutes(v); setSaved(false); }}
+          placeholder="minutes"
+          aria-label="Minutes moved"
+        />
+        <button
+          type="button"
+          className={`${styles.moveLog} ${saved ? styles.moveLogged : ''}`}
+          onClick={log}
+          disabled={saved || !minutes}
+        >
+          {saved ? 'Logged ✓' : 'Log it'}
+        </button>
+      </div>
+      <ExerciseHistoryInline exerciseKey={cardio.key} kind="perf" />
+    </div>
+  );
+}

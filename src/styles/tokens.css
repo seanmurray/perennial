@@ -1,0 +1,63 @@
+/* ─── DESIGN TOKENS — Evergreen ───────────────────────────── */
+/* Deep forest-night base, warm emerald accent. Calm, adult, readable.
+   Variable NAMES match the component library (--green is the primary
+   accent, --blue the secondary) so components need no forking. */
+
+:root {
+  /* Backgrounds — near-black with a green undertone */
+  --bg:        #0b120e;
+  --bg-card:   #121a15;
+  --bg-raised: #1a241e;
+  --bg-input:  #222e27;
+  --bg-pill:   #2a3830;
+
+  /* Text */
+  --t1: #f2f7f3;
+  --t2: #b4c2b8;
+  --t3: #75857b;
+  --t4: #47524b;
+
+  /* Accents */
+  --green:       #34d399;
+  --green-bg:    rgba(52, 211, 153, 0.12);
+  --green-line:  rgba(52, 211, 153, 0.3);
+  --amber:       #fbbf24;
+  --amber-bg:    rgba(251, 191, 36, 0.1);
+  --amber-line:  rgba(251, 191, 36, 0.25);
+  --red:         #f87171;
+  --red-bg:      rgba(248, 113, 113, 0.1);
+  --orange:      #fb923c;
+  --orange-bg:   rgba(251, 146, 60, 0.08);
+  --orange-line: rgba(251, 146, 60, 0.2);
+  --blue:        #38bdf8;
+  --purple:      #a78bfa;
+  --purple-bg:   rgba(167, 139, 250, 0.1);
+  --purple-line: rgba(167, 139, 250, 0.25);
+
+  /* Radii */
+  --r1: 12px;
+  --r2: 16px;
+  --r3: 20px;
+  --r4: 26px;
+
+  /* Safe-area insets */
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+
+  /* Touch targets */
+  --tap: 52px;
+  --tap-min: 44px;
+
+  /* Layout */
+  --app-max-w: 480px;
+  --bottom-nav-h: 68px;
+
+  /* Type families */
+  --font-display: 'Bebas Neue', -apple-system, sans-serif;
+  --font-body:    'DM Sans', -apple-system, sans-serif;
+  --font-mono:    'DM Mono', ui-monospace, monospace;
+
+  /* Motion */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-sheet:  cubic-bezier(0.16, 1, 0.3, 1);
+}
