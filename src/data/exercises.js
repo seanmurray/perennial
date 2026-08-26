@@ -21,7 +21,7 @@ export const EX = {
   goblet_squat_db: {
     name: 'Goblet squat (dumbbell)', target: '2×8', type: 'strength', needs: ['dumbbells'],
     url: YT('goblet squat dumbbell'),
-    cue: 'Hold one dumbbell at your chest. Sit down between your hips, chest proud, heels heavy. Inhale on the way down, exhale as you push the floor away — moving with breath, exactly like a flow. Smooth beats deep.',
+    cue: 'Hold one dumbbell at your chest. Sit down between your hips, chest proud, heels heavy. Inhale on the way down, exhale as you push the floor away. Smooth beats deep.',
   },
   goblet_squat_kb: {
     name: 'Goblet squat (kettlebell)', target: '2×8', type: 'strength', needs: ['kettlebell'],
@@ -38,7 +38,7 @@ export const EX = {
   kb_deadlift: {
     name: 'Kettlebell deadlift', target: '2×8', type: 'strength', needs: ['kettlebell'],
     url: YT('kettlebell deadlift form'),
-    cue: 'Bell between your feet. Push your hips back, flat back, grab it, stand by squeezing your glutes. Lower the same way. Hips do the work, not the back. One pranayama-style breath into the belt line before each pickup — that gentle, bandha-like 360° firmness IS the brace.',
+    cue: 'Bell between your feet. Push your hips back, flat back, grab it, stand by squeezing your glutes. Lower the same way. Hips do the work, not the back. One slow breath into the belt line before each pickup — that gentle all-around firmness IS the brace.',
   },
   db_rdl: {
     name: 'Dumbbell RDL', target: '2×8', type: 'strength', needs: ['dumbbells'],
@@ -48,12 +48,12 @@ export const EX = {
   barbell_rdl: {
     name: 'Barbell RDL', target: '2×8', type: 'strength', needs: ['barbell'],
     url: YT('barbell romanian deadlift light'),
-    cue: 'Soft knees, bar slides down the thighs as the hips travel back — flat back the whole way, stop well before it wants to round. Start embarrassingly light; with a low-back history, the empty bar for a few weeks IS the program. Same breath-brace as your bandha work: inhale low, gentle all-around firmness, exhale up.',
+    cue: 'Soft knees, bar slides down the thighs as the hips travel back — flat back the whole way, stop well before it wants to round. Start embarrassingly light; with a low-back history, the empty bar for a few weeks IS the program. Inhale low, gentle all-around firmness, exhale up.',
   },
   glute_bridge: {
     name: 'Glute bridge', target: '2×12', type: 'strength', needs: [], bodyweight: true,
     url: YT('glute bridge form'),
-    cue: 'On your back, knees bent. Squeeze your glutes to lift your hips into a straight line, pause a beat, lower slow. No lower-back arching — the squeeze is the exercise. A light mula-bandha-style lift as you press up is exactly the right supporting engagement.',
+    cue: 'On your back, knees bent. Squeeze your glutes to lift your hips into a straight line, pause a beat, lower slow. No lower-back arching — the squeeze is the exercise.',
   },
 
   // ─── PUSH family ───────────────────────────────────────────
@@ -146,7 +146,7 @@ export const EX = {
   suitcase_carry_db: {
     name: 'Suitcase carry (dumbbell)', target: '3×30 sec', type: 'strength', needs: ['dumbbells'],
     url: YT('suitcase carry form'),
-    cue: 'One dumbbell in one hand, walk tall — do NOT lean toward the weight. Switch hands each round. Treat it as walking meditation under load: tall spine, steady breath, attention on staying level.',
+    cue: 'One dumbbell in one hand, walk tall — do NOT lean toward the weight. Switch hands each round. Tall spine, steady breath, attention on staying level.',
   },
   suitcase_carry_kb: {
     name: 'Suitcase carry (kettlebell)', target: '3×30 sec', type: 'strength', needs: ['kettlebell'],
@@ -156,14 +156,14 @@ export const EX = {
   backpack_carry: {
     name: 'Loaded backpack carry', target: '3×45 sec', type: 'strength', needs: [],
     url: YT('weighted carry rucking benefits'),
-    cue: 'Load the backpack, hold it in one hand like a suitcase (or hug it to your chest) and walk tall. Rucking-lite — cheap, effective, kind to the joints. Walking meditation with ballast: tall spine, unhurried breath.',
+    cue: 'Load the backpack, hold it in one hand like a suitcase (or hug it to your chest) and walk tall. Rucking-lite — cheap, effective, kind to the joints. Tall spine, unhurried breath.',
   },
 
   // ─── ROTATION & COIL — the gentle Lienhard nod ─────────────
   hip_coil_walk: {
     name: 'Walking hip coil', target: '2×8 each', type: 'strength', needs: [], bodyweight: true,
     url: 'https://www.youtube.com/results?search_query=Judd+Lienhard+hip+coil+walk',
-    cue: 'Walk slowly; on each step let the standing hip rotate you slightly over it, arms swinging naturally across. Athletic hips at conversation pace — a moving meditation. No intensity needed, just the pattern and the breath.',
+    cue: 'Walk slowly; on each step let the standing hip rotate you slightly over it, arms swinging naturally across. Athletic hips at conversation pace. No intensity needed — just the pattern and the breath.',
   },
   kb_coil_walk: {
     name: 'Walking coil with kettlebell', target: '2×6 each', type: 'strength', needs: ['kettlebell'],
@@ -190,12 +190,12 @@ export const EX = {
   dead_bug: {
     name: 'Dead bug', target: '2×8 each', type: 'strength', needs: [], bodyweight: true,
     url: YT('dead bug core exercise'),
-    cue: 'On your back, low back gently pressed to the floor. Lower opposite arm and leg slowly, exhaling as they travel — breath-led movement, like the slowest vinyasa you know. If the back lifts, shrink the movement.',
+    cue: 'On your back, low back gently pressed to the floor. Lower opposite arm and leg slowly, exhaling slowly as they travel — let the breath set the tempo. If the back lifts, shrink the movement.',
   },
   side_plank_knees: {
     name: 'Side plank (from knees)', target: '3×20 sec each', type: 'strength', needs: [], bodyweight: true,
     url: YT('side plank from knees'),
-    cue: 'On your elbow and bent knees, lift the hips into a straight line and hold with calm, ujjayi-easy breathing — never breath-holding. Straight-leg version when the 20 seconds feel easy.',
+    cue: 'On your elbow and bent knees, lift the hips into a straight line and hold with calm, even breathing — never breath-holding. Straight-leg version when the 20 seconds feel easy.',
   },
 };
 

@@ -51,13 +51,13 @@ export function WorkoutScreen({ onFinish }) {
         <div className={styles.bracingCard}>
           <div className={styles.bracingTitle}>Bracing — you already know this</div>
           <p className={styles.bracingBody}>
-            It's your breathwork, pointed at the spine. Inhale 360° into the
-            lower ribs and belt line (pranayama), lightly firm the belly all
-            the way around — a gentle uddiyana bandha at maybe 20%, not a
-            crunch — and exhale slowly through the hard part of each rep, the
-            way you move with breath in a flow. That soft cylinder is what
-            keeps the lower back happy under load. And the attention you'd
-            put on the breath on the cushion? Put it on the working muscle.
+            The breath control and body awareness you've built in practice are
+            exactly what lifting calls bracing. Inhale low and wide into the
+            lower ribs and belt line, keep a light firmness all the way around
+            your middle — maybe 20%, never a crunch — and exhale slowly
+            through the hard part of each rep. That quiet cylinder is what
+            keeps the lower back happy under load. The same attention you can
+            hold on the breath, hold on the muscle doing the work.
           </p>
         </div>
       )}
