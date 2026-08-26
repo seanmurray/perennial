@@ -34,3 +34,14 @@ for (const { name, size } of TARGETS) {
 const fav = await readFile(path.join(BRAND, 'favicon-64.png'));
 await writeFile(path.join(PUBLIC, 'favicon.png'), fav);
 console.log('wrote public/favicon.png (64×64, from the tuned small mark)');
+
+// Wordmark for the in-app header, trimmed to the lettering so the lockup can
+// be sized precisely (the source carries generous even margins for centering).
+// It keeps its cream background, which is exactly --bg, so it sits flush.
+const wm = await sharp(path.join(BRAND, 'wordmark.png'))
+  .trim({ background: '#faf3ec', threshold: 12 })
+  .png({ compressionLevel: 9, palette: true, quality: 92, effort: 10 })
+  .toBuffer();
+const wmMeta = await sharp(wm).metadata();
+await writeFile(path.join(PUBLIC, 'wordmark.png'), wm);
+console.log(`wrote public/wordmark.png (${wmMeta.width}×${wmMeta.height}, trimmed)`);

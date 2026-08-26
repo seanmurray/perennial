@@ -19,15 +19,10 @@ export function OnboardingScreen() {
 
   return (
     <main className={`screen ${styles.wrap}`}>
-      {/* Using the app mark + type rather than brand/wordmark.png — that export
-          is cropped at the right edge (the final "l" is cut off). Swap the
-          image back in once there's an untrimmed version. */}
-      <img
-        src={`${import.meta.env.BASE_URL}icon-192.png`}
-        alt=""
-        className={styles.mark}
-      />
-      <div className={styles.wordmarkText}>Perennial</div>
+      <div className={styles.lockup}>
+        <img src={`${import.meta.env.BASE_URL}icon-192.png`} alt="" className={styles.mark} />
+        <img src={`${import.meta.env.BASE_URL}wordmark.png`} alt="Perennial" className={styles.wordmark} />
+      </div>
       <p className={styles.tagline}>
         Strength, movement, and breath — a simple plan for being fit at 40,
         60, and beyond. Three short sessions a week. Everything stays on your

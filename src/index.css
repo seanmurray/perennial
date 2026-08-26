@@ -41,11 +41,11 @@ a { color: var(--green); text-decoration: none; }
 }
 
 .screen {
-  min-height: 100svh;
-  padding:
-    calc(var(--sat) + 16px)
-    16px
-    calc(var(--sab) + var(--bottom-nav-h) + 16px);
+  /* The safe-area inset lives on AppHeader above; screens just need their own
+     breathing room under it. min-height accounts for the header so a short
+     screen still fills the viewport. */
+  min-height: calc(100svh - 62px);
+  padding: 10px 16px calc(var(--sab) + var(--bottom-nav-h) + 16px);
   animation: fadeUp 0.22s ease;
 }
 

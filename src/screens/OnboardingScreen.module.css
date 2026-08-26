@@ -10,23 +10,26 @@
 .wrap > :first-child { margin-top: auto; }
 .wrap > :last-child  { margin-bottom: auto; }
 
-/* The mark ships on the artwork's cream — the same cream as --bg — so it sits
-   flush on the page with no cutout needed. */
-.mark {
-  display: block;
-  width: 92px;
-  height: 92px;
-  margin: auto 0 10px;
-  border-radius: 22px;
+/* Brand lockup — mark and wordmark on one line. Both ship on the artwork's
+   cream, which is exactly --bg, so they sit flush with no cutout needed. */
+.lockup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: auto 0 6px;
 }
 
-.wordmarkText {
-  font-family: var(--font-body);
-  font-size: 40px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--t1);
-  line-height: 1;
+.mark {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+
+.wordmark {
+  height: 34px;
+  width: auto;
+  display: block;
 }
 
 .tagline {

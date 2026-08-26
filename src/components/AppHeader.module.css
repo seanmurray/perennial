@@ -1,0 +1,25 @@
+/* Slim brand bar above every screen. Sits in normal flow (not fixed) so it
+   scrolls away and never competes with the screen title beneath it. */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: calc(var(--sat) + 12px) 18px 4px;
+  max-width: var(--app-max-w);
+  margin: 0 auto;
+}
+
+.mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  flex-shrink: 0;
+}
+
+/* Height-driven so the lockup stays optically balanced with the mark; the
+   PNG is pre-trimmed to the lettering so this is exact. */
+.wordmark {
+  height: 19px;
+  width: auto;
+  display: block;
+}

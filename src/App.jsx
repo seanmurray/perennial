@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from './lib/queryClient';
 import { BottomNav } from './components/BottomNav';
+import { AppHeader } from './components/AppHeader';
 import { OnboardingScreen } from './screens/OnboardingScreen';
 import { TodayScreen } from './screens/TodayScreen';
 import { WorkoutScreen } from './screens/WorkoutScreen';
@@ -93,6 +94,7 @@ export default function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <AppHeader />
       <div hidden={tab !== 'today'}>
         <TodayScreen onStart={handleStart} />
       </div>
