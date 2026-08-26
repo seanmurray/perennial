@@ -1,4 +1,4 @@
-// Prescription helpers — Evergreen keeps this deliberately simple.
+// Prescription helpers — Perennial keeps this deliberately simple.
 //
 // No percentages, no periodization math. Loads are seeded from your own last
 // session (see SetTable + setAdjust); rest is a friendly default you can
@@ -15,7 +15,7 @@ export function getRestTime(context) {
 }
 
 // Longer rest after harder sets, shorter after easy ones. Target effort in
-// Evergreen is ~7 ("2-3 reps left in the tank").
+// Perennial is ~7 ("2-3 reps left in the tank").
 export function rpeRestAdjust(rpe) {
   if (rpe == null) return 0;
   if (rpe <= 6)   return -15;
@@ -24,14 +24,14 @@ export function rpeRestAdjust(rpe) {
   return 30;
 }
 
-// SetTable compat: Evergreen has no %1RM math — recommendations come purely
+// SetTable compat: Perennial has no %1RM math — recommendations come purely
 // from your own logged history (seedBaseRec handles that). Returning 0 here
 // means "no calculated load", which the seeding path treats as absent.
 export function calcLoad() {
   return 0;
 }
 
-// Session rows carry a phase field in the original schema; Evergreen has a
+// Session rows carry a phase field in the original schema; Perennial has a
 // single steady phase.
 export function getPhase() {
   return 'steady';

@@ -1,43 +1,34 @@
-# Evergreen — Fit for Life
+# Perennial
 
-A simple, equipment-aware strength and movement plan. Built for Ankit:
-three short sessions a week (two full-body strength days + one easy
-Move day), gentle by design, with athletic movement DNA (hip coil, carries,
-hinging) at a calm intensity.
+A simple, equipment-aware strength and movement plan — built for being fit
+at 40, 60, and beyond.
 
-## Principles
-
-- **Equipment-aware.** First run asks what you have on hand; every workout
-  slot resolves to the best variant your equipment allows, with bodyweight
-  as a first-class fallback — never an apology. Change equipment any time
-  in Settings and the plan re-adapts instantly.
-- **Local-first.** All data lives on your phone. No account, no cloud, no
-  tracking. Settings → Export produces a single JSON backup you can stash
-  anywhere; Import restores it.
-- **Leave reps in the tank.** No percentages, no maxes. Load suggestions
-  seed from your own last session; target effort is ~7/10.
+- **Three days a week**: two ~30-minute full-body strength days, one easy
+  Move day (zone-2 walk + gentle mobility).
+- **Equipment-aware**: a first-run question asks what you own; every slot
+  resolves to the best variant your gear allows. Bodyweight is a
+  first-class version of the plan, not a fallback. Tick a new box in
+  Settings the day something arrives and the slots upgrade themselves.
+- **Local-first**: all data lives on your device. No account, no backend,
+  no tracking. Settings → Export produces a single JSON backup.
+- **Gentle by design**: prescriptions leave reps in the tank, and the
+  mobility work is written around real shoulders and lower backs.
 
 ## Stack
 
-React 19 + Vite + TanStack Query + Zustand. PWA (installable from the
-browser via "Add to Home Screen" on Android). Forked from the
-soccer-performance-coach codebase, stripped of its backend and
-athlete-specific programming.
+React 19 · Vite · TanStack Query (over on-device storage) · Zustand ·
+vite-plugin-pwa. Deployed as a PWA via GitHub Pages; installs from the
+browser on Android (menu → *Add to Home screen*) and iOS (Share → *Add to
+Home Screen*).
 
-## Dev
+## Develop
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Program
+## Deploy
 
-| Day | Focus |
-|---|---|
-| Foundations A | Squat · Push · Pull · Carry · Balance |
-| Foundations B | Hinge · Single leg · Press · Upper back · Rotation |
-| Move & Breathe | 30–45 min easy cardio + 5 min mobility |
-
-Program data lives in `src/data/program.js` (days, slots, equipment
-catalog, warm-up) and `src/data/exercises.js` (variants + cues).
+Push to `main` — GitHub Actions builds and publishes to Pages
+automatically. No secrets required.

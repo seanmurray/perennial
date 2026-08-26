@@ -1,4 +1,4 @@
-// Evergreen exercise library — movement for the next forty years.
+// Perennial exercise library — movement for the next forty years.
 //
 // Written for an adult easing into (or back into) training. Every cue is
 // plain language, every prescription leaves reps in the tank. The athletic

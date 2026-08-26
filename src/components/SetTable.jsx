@@ -8,7 +8,7 @@ import { useRestTimer } from '../stores/restTimerStore';
 // SetTable — owns per-set local state for one exercise, buffers each
 // completed set into the session store, and triggers the rest timer.
 //
-// Evergreen has no %1RM math: the weight recommendation seeds entirely from
+// Perennial has no %1RM math: the weight recommendation seeds entirely from
 // YOUR last session's top set (setAdjust closes the loop within a session).
 // First time on an exercise there's simply no recommendation — pick something
 // that leaves 2-3 reps in the tank.

@@ -49,7 +49,7 @@ export const useSessionStore = create(
         }),
     }),
     {
-      name: 'evergreen-session',
+      name: 'perennial-session',
       storage: createJSONStorage(() => localStorage),
     }
   )

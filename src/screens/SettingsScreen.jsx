@@ -39,8 +39,8 @@ export function SettingsScreen() {
     const json = exportAll();
     try {
       if (navigator.share) {
-        const file = new File([json], `evergreen-backup-${new Date().toISOString().slice(0, 10)}.json`, { type: 'application/json' });
-        await navigator.share({ files: [file], title: 'Evergreen backup' });
+        const file = new File([json], `perennial-backup-${new Date().toISOString().slice(0, 10)}.json`, { type: 'application/json' });
+        await navigator.share({ files: [file], title: 'Perennial backup' });
         setBackupMsg('Shared ✓');
         return;
       }
@@ -128,7 +128,7 @@ export function SettingsScreen() {
       {backupMsg && <div className={styles.backupMsg}>{backupMsg}</div>}
 
       <p className={styles.about}>
-        Evergreen · a simple plan for being strong at every age.
+        Perennial · a simple plan for being strong at every age.
       </p>
     </main>
   );

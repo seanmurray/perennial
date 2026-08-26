@@ -1,4 +1,4 @@
-// The Evergreen program — three days a week, fit for life.
+// The Perennial program — three days a week, fit for life.
 //
 // Two short full-body strength days (A and B) and one Move day (easy cardio +
 // mobility). Strength twice a week plus regular zone-2 movement is the

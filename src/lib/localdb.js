@@ -10,10 +10,10 @@
 // beats sync infrastructure for a personal training log.
 
 const KEYS = {
-  sessions: 'evergreen-sessions',
-  sets: 'evergreen-sets',
-  perf: 'evergreen-perf',
-  notes: 'evergreen-notes',
+  sessions: 'perennial-sessions',
+  sets: 'perennial-sets',
+  perf: 'perennial-perf',
+  notes: 'perennial-notes',
 };
 
 function read(key, fallback) {
@@ -132,7 +132,7 @@ export function setNote(exerciseKey, exerciseName, note) {
 export function exportAll() {
   return JSON.stringify(
     {
-      app: 'evergreen',
+      app: 'perennial',
       version: 1,
       exported_at: new Date().toISOString(),
       sessions: read(KEYS.sessions, []),
@@ -148,8 +148,8 @@ export function exportAll() {
 export function importAll(json) {
   let data;
   try { data = JSON.parse(json); } catch { return { ok: false, error: 'That file is not valid JSON.' }; }
-  if (data?.app !== 'evergreen' || !Array.isArray(data.sessions)) {
-    return { ok: false, error: 'That does not look like an Evergreen backup.' };
+  if (data?.app !== 'perennial' || !Array.isArray(data.sessions)) {
+    return { ok: false, error: 'That does not look like an Perennial backup.' };
   }
   write(KEYS.sessions, data.sessions);
   write(KEYS.sets, data.sets ?? []);

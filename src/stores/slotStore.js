@@ -42,7 +42,7 @@ export const useSlotStore = create(
       getChoice: (slotId) => get().today[slotId] ?? get().always[slotId] ?? null,
     }),
     {
-      name: 'evergreen-slots',
+      name: 'perennial-slots',
       storage: createJSONStorage(() => localStorage),
       partialize: (s) => ({ always: s.always }),
     }

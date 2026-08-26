@@ -37,7 +37,7 @@ export const useSettingsStore = create(
         set((s) => ({ timerPrefs: { ...s.timerPrefs, [key]: value } })),
     }),
     {
-      name: 'evergreen-settings',
+      name: 'perennial-settings',
       storage: createJSONStorage(() => localStorage),
     }
   )

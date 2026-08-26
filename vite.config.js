@@ -18,8 +18,8 @@ export default defineConfig(({ mode }) => {
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Evergreen — Fit for Life',
-        short_name: 'Evergreen',
+        name: 'Perennial — Fit for Life',
+        short_name: 'Perennial',
         description: 'A simple, equipment-aware strength and movement plan for being fit at every age.',
         start_url: '.',
         scope: '.',

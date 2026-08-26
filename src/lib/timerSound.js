@@ -7,7 +7,7 @@
 // needs the native (Capacitor) wrap, where this same clip can become the local
 // notification sound. See the RestTimer discussion.
 
-const KEY = 'evergreen-timer-sound';
+const KEY = 'perennial-timer-sound';
 // Keep clips short. A ~5s voice clip is well under this; the cap protects the
 // ~5MB localStorage quota (data URLs are strings, and base64 adds ~33%).
 const MAX_CHARS = 700 * 1024;

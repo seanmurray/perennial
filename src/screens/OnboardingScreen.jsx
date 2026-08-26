@@ -19,8 +19,8 @@ export function OnboardingScreen() {
 
   return (
     <main className={`screen ${styles.wrap}`}>
-      <div className={styles.leaf}>🌲</div>
-      <div className="title-xl">EVERGREEN</div>
+      <div className={styles.leaf}>🌱</div>
+      <div className="title-xl">PERENNIAL</div>
       <p className={styles.tagline}>
         Strength, movement, and breath — a simple plan for being fit at 40,
         60, and beyond. Three short sessions a week. Everything stays on your

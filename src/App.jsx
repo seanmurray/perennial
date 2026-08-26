@@ -16,7 +16,7 @@ import { saveSession } from './lib/localdb';
 import { DAYS, WARMUP } from './data/program';
 
 // Persist the active bottom-nav tab so an Android Chrome reload restores it.
-const TAB_KEY = 'evergreen-tab';
+const TAB_KEY = 'perennial-tab';
 const VALID_TABS = ['today', 'workout', 'history', 'settings'];
 function readPersistedTab() {
   try {
