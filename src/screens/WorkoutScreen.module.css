@@ -26,6 +26,9 @@
   color: var(--t2);
   line-height: 1.55;
 }
+/* These cards can run to two paragraphs; without this they read as one
+   unbroken wall of text. */
+.bracingBody + .bracingBody { margin-top: 10px; }
 
 .empty {
   font-size: 17px;

@@ -4,6 +4,7 @@ import { computeNextRec, seedBaseRec, topSet } from '../lib/setAdjust';
 import { useExerciseHistory } from '../hooks/useExerciseHistory';
 import { useSessionStore } from '../stores/sessionStore';
 import { useRestTimer } from '../stores/restTimerStore';
+import { RestGuide } from './RestGuide';
 
 // SetTable — owns per-set local state for one exercise, buffers each
 // completed set into the session store, and triggers the rest timer.
@@ -16,6 +17,7 @@ export function SetTable({
   exerciseKey,
   exerciseName,
   prescription,
+  role,
   context = 'strength',
   showWeight = true,
 }) {
@@ -42,6 +44,9 @@ export function SetTable({
     }))
   );
   const [adaptNote, setAdaptNote] = useState(null);
+  // Effort from the most recently completed set — drives the rest suggestion
+  // shown on the card. Null until something is logged.
+  const [lastRpe, setLastRpe] = useState(null);
 
   function recForSet(idx) {
     if (!showWeight) return { value: null, variant: 'ok', note: null };
@@ -92,7 +97,8 @@ export function SetTable({
       setAdaptNote(nextRec.note);
     }
 
-    startTimer({ exerciseName, context, rpe });
+    setLastRpe(rpe);
+    startTimer({ exerciseName, role, context, rpe, auto: true });
   }
 
   return (
@@ -119,6 +125,12 @@ export function SetTable({
         );
       })}
       {adaptNote && <AdaptNote>{adaptNote}</AdaptNote>}
+      <RestGuide
+        exerciseName={exerciseName}
+        role={role}
+        context={context}
+        lastRpe={lastRpe}
+      />
     </>
   );
 }

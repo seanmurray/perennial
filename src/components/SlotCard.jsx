@@ -48,6 +48,7 @@ export function SlotCard({ slot, dayId }) {
         exerciseKey={res.activeKey}
         exerciseName={savedName}
         prescription={prescription}
+        role={slot.role}
         context="strength"
         showWeight={showWeight}
       />

@@ -62,6 +62,28 @@ export function WorkoutScreen({ onFinish }) {
         </div>
       )}
 
+      {!isMove && (
+        <div className={styles.bracingCard}>
+          <div className={styles.bracingTitle}>How hard, and how long to rest</div>
+          <p className={styles.bracingBody}>
+            Finish most sets with about three good reps still in you. That's
+            what the 7 in the RPE column means, and it's what every set starts
+            on — if a set felt harder than that, nudge the number up; easier,
+            nudge it down. You're estimating, not measuring. Nothing breaks if
+            you're off by half a point.
+          </p>
+          <p className={styles.bracingBody}>
+            Rest is the part that's easy to get wrong, so the app just tells
+            you: long enough that your strength has actually come back, short
+            enough that you don't go cold. Every card carries its own number —
+            more after squats and hinges, less after balance work. The timer
+            starts when you tick a set off and stretches or shrinks to match the
+            effort you logged. Resting longer than it suggests is never the
+            wrong call.
+          </p>
+        </div>
+      )}
+
       {isMove && <MoveCard cardio={day.cardio} />}
 
       <div className={wstyles.card}>

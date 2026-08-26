@@ -13,11 +13,14 @@
   border: 0.5px solid var(--hairline);
   padding: 14px 16px;
   z-index: 200;
+  box-shadow: 0 8px 40px var(--scrim);
+  animation: timerSlide 0.25s var(--ease-sheet);
+}
+
+.row {
   display: flex;
   align-items: center;
   gap: 14px;
-  box-shadow: 0 8px 40px var(--scrim);
-  animation: timerSlide 0.25s var(--ease-sheet);
 }
 
 @keyframes timerSlide {
@@ -69,11 +72,16 @@
   text-overflow: ellipsis;
 }
 
-.note {
-  font-family: var(--font-mono);
-  font-size: 16px;
-  color: var(--t3);
-  margin-top: 2px;
+/* The reason the rest is this long. Its own row so a full sentence can
+   breathe; the hairline ties it to the timer above rather than letting it
+   read as a separate card. */
+.why {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--hairline);
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--t2);
 }
 
 .controls {

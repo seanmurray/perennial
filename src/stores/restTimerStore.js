@@ -3,7 +3,7 @@
 // component reads it and drives the SVG ring + button row.
 
 import { create } from 'zustand';
-import { getRestTime, rpeRestAdjust } from '../lib/rx';
+import { restFor } from '../lib/rest';
 import { useSettingsStore } from './settingsStore';
 import { playTimerSound } from '../lib/timerSound';
 
@@ -48,22 +48,19 @@ export const useRestTimer = create((set, get) => ({
   remaining: 0,
   rpeNote: '',     // human-readable adjustment hint, e.g. "+15 sec from RPE 8.5"
 
-  start: ({ exerciseName, context, week, rpe }) => {
+  // auto: true means "the app is starting this because a set was ticked off",
+  // which the autoStart preference can veto. A tap on the card's Start button
+  // passes auto: false and always runs — turning autoStart off should mean
+  // "don't surprise me", not "no timer for you".
+  start: ({ exerciseName, role, context, rpe, auto = false }) => {
     const prefs = useSettingsStore.getState().timerPrefs;
-    if (!prefs.autoStart) return;
+    if (auto && !prefs.autoStart) return;
 
-    const total = Math.max(30, getRestTime(context) + rpeRestAdjust(rpe));
+    // Same call the card uses for its suggestion, so the number on the card
+    // and the number in the ring can never disagree.
+    const { seconds: total, why } = restFor({ role, context, rpe });
     const remaining = total;
-
-    // Build a small RPE diff hint to display.
-    let note = '';
-    if (rpe != null) {
-      const target = 8;
-      const delta = rpe - target;
-      if (delta > 0) note = `+${Math.round(delta * 15)} sec from RPE ${rpe}`;
-      else if (delta < 0) note = `${Math.round(delta * 15)} sec from RPE ${rpe}`;
-      else note = `RPE ${rpe} on target`;
-    }
+    const note = rpe == null ? '' : why;
 
     if (intervalId) clearInterval(intervalId);
 

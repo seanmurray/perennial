@@ -3,6 +3,7 @@ import styles from './RestTimer.module.css';
 import { useShallow } from 'zustand/react/shallow';
 import { useRestTimer } from '../stores/restTimerStore';
 import { useSettingsStore } from '../stores/settingsStore';
+import { formatClock, formatRest } from '../lib/rest';
 
 // Hold a screen wake lock while a rest timer is on screen so the phone doesn't
 // dim/sleep mid-rest and swallow the end sound. Auto-released by the browser
@@ -65,33 +66,38 @@ export function RestTimer() {
 
   return (
     <div className={styles.float} role="status" aria-live="polite">
-      <div className={styles.ringWrap}>
-        <svg width="60" height="60" viewBox="0 0 60 60" aria-hidden>
-          <circle cx="30" cy="30" r="22" fill="none" strokeWidth="5" className={styles.track} />
-          <circle
-            cx="30" cy="30" r="22" fill="none" strokeWidth="5"
-            stroke={ringColor(remaining, total)}
-            strokeDasharray={CIRCUMFERENCE}
-            strokeDashoffset={offset}
-            className={styles.value}
-          />
-        </svg>
-        <div className={styles.center}>
-          <div className={styles.countdown}>{remaining}</div>
+      <div className={styles.row}>
+        <div className={styles.ringWrap}>
+          <svg width="60" height="60" viewBox="0 0 60 60" aria-hidden>
+            <circle cx="30" cy="30" r="22" fill="none" strokeWidth="5" className={styles.track} />
+            <circle
+              cx="30" cy="30" r="22" fill="none" strokeWidth="5"
+              stroke={ringColor(remaining, total)}
+              strokeDasharray={CIRCUMFERENCE}
+              strokeDashoffset={offset}
+              className={styles.value}
+            />
+          </svg>
+          <div className={styles.center}>
+            <div className={styles.countdown}>{formatClock(remaining)}</div>
+          </div>
+        </div>
+
+        <div className={styles.main}>
+          <div className={styles.label}>Rest {formatRest(total)}</div>
+          <div className={styles.exname}>{exerciseName}</div>
+        </div>
+
+        <div className={styles.controls}>
+          <button type="button" className={styles.adj} onClick={() => adjust(-15)} aria-label="Subtract 15 seconds">−15</button>
+          <button type="button" className={styles.adj} onClick={() => adjust(15)}  aria-label="Add 15 seconds">+15</button>
+          <button type="button" className={styles.skip} onClick={skip}             aria-label="Skip rest">▸</button>
         </div>
       </div>
 
-      <div className={styles.main}>
-        <div className={styles.label}>Rest</div>
-        <div className={styles.exname}>{exerciseName}</div>
-        {rpeNote && <div className={styles.note}>{rpeNote}</div>}
-      </div>
-
-      <div className={styles.controls}>
-        <button type="button" className={styles.adj} onClick={() => adjust(-15)} aria-label="Subtract 15 seconds">−15</button>
-        <button type="button" className={styles.adj} onClick={() => adjust(15)}  aria-label="Add 15 seconds">+15</button>
-        <button type="button" className={styles.skip} onClick={skip}             aria-label="Skip rest">▸</button>
-      </div>
+      {/* Why this rest is the length it is. Full width on its own row — it's a
+          sentence, and the strip between the ring and the buttons is ~90px. */}
+      {rpeNote && <div className={styles.why}>{rpeNote}</div>}
     </div>
   );
 }
