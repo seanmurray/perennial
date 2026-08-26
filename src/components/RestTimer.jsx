@@ -37,9 +37,9 @@ const CIRCUMFERENCE = 138; // r=22 → 2πr ≈ 138.2
 // Ring color shifts green → amber → red as time runs low (spec §10).
 function ringColor(remaining, total) {
   const pct = total > 0 ? remaining / total : 0;
-  if (pct > 0.5)  return '#30d158'; // green
-  if (pct > 0.2)  return '#ffd60a'; // amber
-  return '#ff453a';                  // red
+  if (pct > 0.5)  return 'var(--green)';
+  if (pct > 0.2)  return 'var(--amber)';
+  return 'var(--red)';
 }
 
 export function RestTimer() {

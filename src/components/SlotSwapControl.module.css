@@ -52,7 +52,7 @@
 }
 .customSet {
   background: var(--amber);
-  color: #2a1c00;
+  color: var(--on-accent);
   font-weight: 800;
   font-size: 14px;
   padding: 10px 16px;

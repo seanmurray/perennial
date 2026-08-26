@@ -1,38 +1,60 @@
 /* ─── DESIGN TOKENS — Perennial ───────────────────────────── */
-/* Deep forest-night base, warm emerald accent. Calm, adult, readable.
-   Variable NAMES match the component library (--green is the primary
-   accent, --blue the secondary) so components need no forking. */
+/* Light, warm, and quiet — sampled directly from the app artwork:
+   cream canvas #faf3ec, deep forest #274132, sage ring #96a68d,
+   amber ring #cca679. Variable NAMES are unchanged from the dark
+   original (--green is still "primary accent") so components need no
+   forking; only the values moved. */
 
 :root {
-  /* Backgrounds — near-black with a green undertone */
-  --bg:        #0b120e;
-  --bg-card:   #121a15;
-  --bg-raised: #1a241e;
-  --bg-input:  #222e27;
-  --bg-pill:   #2a3830;
+  /* Canvas & surfaces — page is a touch deeper than the cards so they lift */
+  --bg:        #faf3ec;  /* the artwork canvas cream, exactly — brand PNGs blend flush */
+  --bg-card:   #fffdf9;
+  --bg-raised: #ebe0d1;
+  --bg-input:  #f7f0e5;
+  --bg-pill:   #ebe0d1;
+  /* Frosted bottom nav — the artwork's exact canvas cream, translucent */
+  --bg-blur:   rgba(250, 243, 236, 0.92);
 
-  /* Text */
-  --t1: #f2f7f3;
-  --t2: #b4c2b8;
-  --t3: #75857b;
-  --t4: #47524b;
+  /* Ink — the icon's deep forest */
+  --t1: #26382c;
+  --t2: #4d6053;
+  --t3: #6b7a6d;
+  --t4: #9aa598;
 
-  /* Accents */
-  --green:       #34d399;
-  --green-bg:    rgba(52, 211, 153, 0.12);
-  --green-line:  rgba(52, 211, 153, 0.3);
-  --amber:       #fbbf24;
-  --amber-bg:    rgba(251, 191, 36, 0.1);
-  --amber-line:  rgba(251, 191, 36, 0.25);
-  --red:         #f87171;
-  --red-bg:      rgba(248, 113, 113, 0.1);
-  --orange:      #fb923c;
-  --orange-bg:   rgba(251, 146, 60, 0.08);
-  --orange-line: rgba(251, 146, 60, 0.2);
-  --blue:        #38bdf8;
-  --purple:      #a78bfa;
-  --purple-bg:   rgba(167, 139, 250, 0.1);
-  --purple-line: rgba(167, 139, 250, 0.25);
+  /* Hairlines are now dark-on-light (they were white-on-dark) */
+  --hairline:        rgba(38, 56, 44, 0.10);
+  --hairline-strong: rgba(38, 56, 44, 0.18);
+  --scrim:           rgba(30, 44, 35, 0.45);
+
+  /* Primary accent — deep forest. Cream ink sits on top of it. */
+  --green:       #2d5a41;
+  --green-bg:    rgba(45, 90, 65, 0.10);
+  --green-line:  rgba(45, 90, 65, 0.26);
+  --on-accent:   #faf3ec;
+
+  /* Amber ring — records, custom badges. Darkened from the artwork's
+     #cca679 so it stays legible as text on cream. */
+  --amber:       #a9752f;
+  --amber-bg:    rgba(204, 166, 121, 0.22);
+  --amber-line:  rgba(169, 117, 47, 0.32);
+
+  /* Sage ring — secondary badges. --purple is a legacy alias. */
+  --sage:        #5f7562;
+  --sage-bg:     rgba(150, 166, 141, 0.22);
+  --purple:      #5f7562;
+  --purple-bg:   rgba(150, 166, 141, 0.22);
+  --purple-line: rgba(95, 117, 98, 0.3);
+
+  /* Secondary accent — muted teal that sits beside the sage without shouting */
+  --blue:      #2f6f68;
+  --blue-bg:   rgba(47, 111, 104, 0.10);
+  --blue-line: rgba(47, 111, 104, 0.26);
+
+  --red:         #a4433a;
+  --red-bg:      rgba(164, 67, 58, 0.10);
+  --orange:      #b5813c;
+  --orange-bg:   rgba(181, 129, 60, 0.10);
+  --orange-line: rgba(181, 129, 60, 0.25);
 
   /* Radii */
   --r1: 12px;

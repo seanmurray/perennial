@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => {
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
+      includeAssets: ['favicon.png', 'apple-touch-icon.png'],
       manifest: {
         name: 'Perennial — Fit for Life',
         short_name: 'Perennial',
@@ -24,8 +24,8 @@ export default defineConfig(({ mode }) => {
         start_url: '.',
         scope: '.',
         display: 'standalone',
-        background_color: '#0b120e',
-        theme_color: '#0b120e',
+        background_color: '#faf3ec',
+        theme_color: '#faf3ec',
         orientation: 'portrait',
         icons: [
           { src: 'icon-192.png', sizes: '192x192', type: 'image/png' },

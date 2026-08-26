@@ -57,7 +57,7 @@
 
 .body {
   padding: 0 16px 16px;
-  border-top: 0.5px solid rgba(255, 255, 255, 0.06);
+  border-top: 0.5px solid var(--hairline);
 }
 
 .cue {
@@ -85,12 +85,12 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
-.tagAcc  { background: #0d2236; color: #5bb4f0; }
-.tagLat  { background: #1a0f36; color: #a78ef0; }
-.tagLin  { background: #0a2010; color: #3dca70; }
-.tagVel  { background: #2a0e0e; color: #f07070; }
-.tagCond { background: #0a1a0a; color: #30d158; }
-.tagStr  { background: #241808; color: #d4a050; }
+.tagAcc  { background: var(--blue-bg); color: var(--blue); }
+.tagLat  { background: var(--sage-bg); color: var(--sage); }
+.tagLin  { background: var(--green-bg); color: var(--green); }
+.tagVel  { background: var(--red-bg); color: var(--red); }
+.tagCond { background: var(--green-bg); color: var(--green); }
+.tagStr  { background: var(--amber-bg); color: var(--amber); }
 
 .video {
   display: inline-flex;
@@ -141,7 +141,7 @@
 .swapSection {
   margin-top: 12px;
   padding-top: 12px;
-  border-top: 0.5px solid rgba(255, 255, 255, 0.06);
+  border-top: 0.5px solid var(--hairline);
 }
 
 .swapLabel {
@@ -168,7 +168,7 @@
   font-size: 17px;
   font-weight: 500;
   letter-spacing: 0.02em;
-  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  border: 0.5px solid var(--hairline);
   transition: all 0.15s;
   text-align: left;
   line-height: 1.3;
@@ -194,7 +194,7 @@
 .upgradeSection {
   margin-top: 12px;
   padding-top: 12px;
-  border-top: 0.5px solid rgba(255, 255, 255, 0.06);
+  border-top: 0.5px solid var(--hairline);
 }
 
 .upgradePill {
@@ -214,7 +214,7 @@
   min-height: var(--tap-min);
   transition: all 0.15s;
 }
-.upgradePill.active { background: var(--amber); color: #0a0a0a; }
+.upgradePill.active { background: var(--amber); color: var(--on-accent); }
 
 .upgradeBlock {
   background: var(--amber-bg);

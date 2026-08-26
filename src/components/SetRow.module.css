@@ -122,7 +122,7 @@
   content: '✓';
   font-size: 20px;
   font-weight: 700;
-  color: #0a0a0a;
+  color: var(--on-accent);
   position: absolute;
   top: 50%;
   left: 50%;

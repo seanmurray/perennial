@@ -30,17 +30,17 @@
   text-transform: uppercase;
   background: var(--bg-pill);
   color: var(--t2);
-  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  border: 0.5px solid var(--hairline);
   transition: all 0.15s;
 }
-.checkAll.allDone { background: var(--green); color: #0a0a0a; border-color: var(--green); }
+.checkAll.allDone { background: var(--green); color: var(--on-accent); border-color: var(--green); }
 
 .item {
   display: flex;
   align-items: center;
   gap: 16px;
   padding: 14px 0;
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 0.5px solid var(--hairline);
   cursor: pointer;
 }
 .item:last-child { border-bottom: none; }

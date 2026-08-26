@@ -69,7 +69,7 @@
   padding: 13px;
   border-radius: var(--r1);
   background: var(--green);
-  color: #06210f;
+  color: var(--on-accent);
   font-size: 16px;
   font-weight: 800;
 }

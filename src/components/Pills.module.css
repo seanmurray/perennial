@@ -8,7 +8,7 @@
   padding: 12px 18px;
   background: var(--bg-card);
   border-radius: var(--r3);
-  border: 0.5px solid rgba(255, 255, 255, 0.06);
+  border: 0.5px solid var(--hairline);
   min-width: 80px;
   cursor: pointer;
   transition: all 0.2s var(--ease-spring);
@@ -18,7 +18,7 @@
 .dayName { font-family: var(--font-display); font-size: 18px; letter-spacing: 0.04em; color: var(--t1); }
 
 .dayPill.active { background: var(--green); border-color: var(--green); transform: scale(1.04); }
-.dayPill.active .dayN, .dayPill.active .dayName { color: #0a0a0a; }
+.dayPill.active .dayN, .dayPill.active .dayName { color: var(--on-accent); }
 
 /* Module pill — round-cap chip with icon + label. */
 .modulePill {
@@ -29,7 +29,7 @@
   padding: 10px 14px;
   background: var(--bg-card);
   border-radius: 100px;
-  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  border: 0.5px solid var(--hairline);
   font-size: 17px;
   font-weight: 600;
   color: var(--t2);

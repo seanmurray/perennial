@@ -7,15 +7,16 @@
   transform: translateX(-50%);
   width: calc(100% - 24px);
   max-width: calc(var(--app-max-w) - 24px);
-  background: var(--bg-raised);
+  background: var(--bg-card);
+  box-shadow: 0 6px 20px rgba(38, 56, 44, 0.14);
   border-radius: var(--r4);
-  border: 0.5px solid rgba(255, 255, 255, 0.12);
+  border: 0.5px solid var(--hairline);
   padding: 14px 16px;
   z-index: 200;
   display: flex;
   align-items: center;
   gap: 14px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 8px 40px var(--scrim);
   animation: timerSlide 0.25s var(--ease-sheet);
 }
 
@@ -27,7 +28,7 @@
 .ringWrap { position: relative; width: 60px; height: 60px; flex-shrink: 0; }
 .ringWrap svg { transform: rotate(-90deg); }
 
-.track  { stroke: rgba(255, 255, 255, 0.08); }
+.track  { stroke: var(--hairline); }
 .value  { stroke-linecap: round; transition: stroke-dashoffset 1s linear, stroke 0.4s; }
 
 .center {
@@ -102,7 +103,7 @@
   height: 40px;
   border-radius: 50%;
   background: var(--green);
-  color: #0a0a0a;
+  color: var(--on-accent);
   font-size: 18px;
   display: flex;
   align-items: center;

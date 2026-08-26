@@ -22,8 +22,8 @@ button {
   color: inherit;
   -webkit-tap-highlight-color: transparent;
 }
-input, textarea, select { font-family: inherit; color-scheme: dark; }
-input[type='date'] { color-scheme: dark; }
+input, textarea, select { font-family: inherit; color-scheme: light; }
+input[type='date'] { color-scheme: light; }
 input[type='number']::-webkit-inner-spin-button { opacity: 0.4; }
 
 a { color: var(--green); text-decoration: none; }

@@ -4,7 +4,7 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.65);
+  background: var(--scrim);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   z-index: 300;
@@ -21,9 +21,9 @@
   transform: translateX(-50%) translateY(100%);
   width: 100%;
   max-width: var(--app-max-w);
-  background: var(--bg-raised);
+  background: var(--bg-card);
   border-radius: var(--r4) var(--r4) 0 0;
-  border-top: 0.5px solid rgba(255, 255, 255, 0.1);
+  border-top: 0.5px solid var(--hairline);
   z-index: 400;
   display: flex;
   flex-direction: column;
@@ -35,7 +35,7 @@
 .handle {
   width: 36px;
   height: 4px;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--hairline-strong);
   border-radius: 2px;
   margin: 12px auto 0;
   flex-shrink: 0;
@@ -43,7 +43,7 @@
 
 .header {
   padding: 16px 20px 12px;
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 0.5px solid var(--hairline);
 }
 
 .title {
@@ -69,7 +69,7 @@
   align-items: center;
   gap: 14px;
   padding: 14px 0;
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 0.5px solid var(--hairline);
 }
 .row:last-of-type { border-bottom: none; }
 
@@ -106,7 +106,7 @@
   flex: 1;
   height: 52px;
   background: var(--green);
-  color: #0a0a0a;
+  color: var(--on-accent);
   border-radius: var(--r3);
   font-family: var(--font-display);
   font-size: 20px;
@@ -128,5 +128,5 @@
   border-radius: var(--r3);
   font-size: 18px;
   font-weight: 500;
-  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  border: 0.5px solid var(--hairline);
 }

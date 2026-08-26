@@ -49,7 +49,7 @@ export function ExerciseBlock({
                 display: 'inline-block', marginTop: 4, fontSize: 12.5, fontWeight: 700,
                 letterSpacing: '0.02em', padding: '3px 8px', borderRadius: 6,
                 color: badge.tone === 'swap' ? 'var(--blue)' : badge.tone === 'custom' ? 'var(--amber)' : 'var(--purple)',
-                background: badge.tone === 'swap' ? 'rgba(10,132,255,0.12)' : badge.tone === 'custom' ? 'var(--amber-bg)' : 'var(--purple-bg)',
+                background: badge.tone === 'swap' ? 'var(--blue-bg)' : badge.tone === 'custom' ? 'var(--amber-bg)' : 'var(--purple-bg)',
               }}
             >
               {badge.text}
