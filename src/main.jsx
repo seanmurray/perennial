@@ -16,6 +16,17 @@ if (import.meta.env.DEV && 'serviceWorker' in navigator) {
   }).catch(() => { /* ignore */ });
 }
 
+// All of the user's data lives in on-device storage. Ask the browser to mark
+// it PERSISTENT so Android can't auto-evict it under storage pressure —
+// granted near-automatically for installed PWAs; harmless no-op elsewhere.
+// (This protects against eviction, not against the user clearing site data —
+// Settings → Export backup remains the belt-and-suspenders.)
+if (navigator.storage?.persist) {
+  navigator.storage.persisted().then((already) => {
+    if (!already) navigator.storage.persist().catch(() => {});
+  }).catch(() => {});
+}
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
