@@ -83,6 +83,33 @@
 }
 .backupMsg { font-size: 14px; color: var(--green); font-weight: 600; margin-top: 10px; }
 
+.importOr {
+  font-size: 13px;
+  color: var(--t4);
+  text-align: center;
+  margin: -2px 0;
+}
+
+/* Only appears once enough sessions have piled up since the last export —
+   a reminder, not an alarm, so it borrows amber rather than a red. */
+.nudge {
+  background: var(--amber-bg, var(--bg-raised));
+  border-left: 3px solid var(--amber);
+  border-radius: var(--r1);
+  padding: 11px 13px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--t2);
+  margin-bottom: 12px;
+}
+
+.health {
+  font-size: 13px;
+  color: var(--t4);
+  line-height: 1.5;
+  margin-top: 12px;
+}
+
 .about {
   text-align: center;
   font-size: 13px;

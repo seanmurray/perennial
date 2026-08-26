@@ -10,9 +10,12 @@ permissions:
   pages: write
   id-token: write
 
+# Queue deploys rather than cancelling them. With cancel-in-progress: true a
+# second run (or a manual dispatch) kills whatever is already queued/running,
+# which shows up as a bogus "failure" and can leave Pages mid-publish.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:

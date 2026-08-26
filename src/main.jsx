@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
+import { recoverIfNeeded } from './lib/localdb.js'
 
 // Dev-mode service-worker cleanup. vite-plugin-pwa only generates an SW in
 // production builds, but a developer who once ran `npm run build/preview`
@@ -27,8 +28,19 @@ if (navigator.storage?.persist) {
   }).catch(() => {});
 }
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+// If localStorage lost the primary keys but a backup copy survived (the
+// IndexedDB mirror or the last-known-good snapshot), restore before the first
+// render — otherwise the app paints an empty history and the next save writes
+// that emptiness back over the top.
+recoverIfNeeded()
+  .then((r) => {
+    if (r) console.warn(`[perennial] Restored ${r.restored} session(s) from ${r.from}.`);
+  })
+  .catch(() => { /* recovery is best-effort; never block boot */ })
+  .finally(() => {
+    createRoot(document.getElementById('root')).render(
+      <StrictMode>
+        <App />
+      </StrictMode>,
+    );
+  });
