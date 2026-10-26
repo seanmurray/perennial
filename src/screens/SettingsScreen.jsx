@@ -34,7 +34,8 @@ export function SettingsScreen() {
   const [backupMsg, setBackupMsg] = useState('');
   const [importOpen, setImportOpen] = useState(false);
   const [health, setHealth] = useState(null);
-  const [pending, setPending] = useState(null);
+  // Read synchronously at mount — it's a localStorage read, not an effect.
+  const [pending, setPending] = useState(unbackedUpCount);
   const importRef = useRef(null);
   const fileRef = useRef(null);
 
@@ -42,7 +43,11 @@ export function SettingsScreen() {
     storageInfo().then(setHealth).catch(() => {});
     setPending(unbackedUpCount());
   };
-  useEffect(refreshHealth, []);
+  // Quota/persistence is async — set from the promise callback, not the
+  // effect body.
+  useEffect(() => {
+    storageInfo().then(setHealth).catch(() => {});
+  }, []);
 
   // Share → download → clipboard. Share is best on Android (straight into
   // Drive or a chat); the file download is the reliable fallback; clipboard is
