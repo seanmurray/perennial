@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "gen-icons": "node scripts/gen-icons.mjs"
+    "gen-icons": "node scripts/gen-icons.mjs",
+    "test": "node --import ./scripts/tz-preload.mjs --test --test-reporter=dot"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.100.9",
