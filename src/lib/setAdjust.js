@@ -94,24 +94,29 @@ function driftForSet({ targetReps, targetRpe, actualReps, actualWeight, actualRp
 // stays the source of truth for intensity; the prior session only corrects
 // for a stale stored max. Bounded to ±SEED_CAP_PCT so one anomalous session
 // (a grinder, a sandbagged set) can't run the recommendation away.
+//
+// Perennial has no %1RM math, so calcRec is 0 (see SetTable). Then the
+// anchor is last session's top set itself: without this, set 1's REC was
+// always blank, whatever the history.
 const SEED_CAP_PCT = 0.12;
 
 export function seedBaseRec({ calcRec, prescription, lastTop }) {
-  if (calcRec == null || calcRec <= 0) return calcRec;
-  if (!prescription || !lastTop || lastTop.weight == null) return calcRec;
+  const anchor = calcRec > 0 ? calcRec : lastTop?.weight;
+  if (anchor == null || anchor <= 0) return calcRec;
+  if (!prescription || !lastTop || lastTop.weight == null) return anchor;
 
   const { drift } = driftForSet({
     targetReps: prescription.reps,
     targetRpe: prescription.target_rpe ?? 8,
     actualReps: lastTop.reps,
-    actualWeight: calcRec, // scale bump/drop magnitudes to this week's load
+    actualWeight: anchor, // scale bump/drop magnitudes to this load
     actualRpe: lastTop.rpe,
   });
-  if (!drift) return calcRec;
+  if (!drift) return roundToPlate(anchor);
 
-  const cap = calcRec * SEED_CAP_PCT;
+  const cap = anchor * SEED_CAP_PCT;
   const bounded = Math.max(-cap, Math.min(cap, drift));
-  return roundToPlate(calcRec + bounded);
+  return roundToPlate(anchor + bounded);
 }
 
 // Pick the top working set from a session's set list: heaviest weight, then
